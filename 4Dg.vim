@@ -7,7 +7,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword basicLanguageKeywords var if endif while wend func endfunc repeat forever
+syn keyword basicLanguageKeywords var if else endif while wend func endfunc repeat forever until break continue goto for next switch case default endswitch gosub endsub
 syn keyword ctypeFunctions isdigit isxdigit isupper islower isalpha isalnum isprint isspace toupper tolower LObyte HIbyte ByteSwap
 syn keyword dispFunctions disp_SetReg disp_setGRAM disp_WrGRAM disp_WriteControl disp_WriteWord disp_ReadWord disp_Sync disp_Disconnect disp_Init
 syn keyword FAT16Functions file_Error file_Count file_Dir file_FindFirst file_FindNext file_Exists file_Open file_Close file_Read file_Seek file_Index file_Tell file_Write file_Size file_Image file_ScreenCapture file_PutC file_GetC file_PutW file_GetW file_PutS file_GetS file_Erase file_Rewind file_LoadFunction file_Run file_Exec file_LoadImageControl file_Mount file_MountSpeed file_Unmount file_PlayWAV file_CheckUpdate
@@ -33,21 +33,24 @@ syn keyword widgetFunctions widget_Create widget_Add widget_Delete widget_Reallo
 syn keyword CRCFunctions crc_CSUM_8
 
 syn match preProcess "#\w+"
-syn match lineComments '\/\/.*'
 syn match constString '".*"'
-syn match test "main"
+syn match main "main"
+syn match assignments ":="
+syn match lineComments '\/\/.*'
 
 syn region blockComment start="\/\*" end="\*\/"
 
-hi Test 		ctermfg=darkred		ctermbg=NONE
+hi Main 		ctermfg=white		ctermbg=NONE
 hi ConstString 		ctermfg=blue 		ctermbg=NONE
 hi blockComment 	ctermfg=darkgreen 	ctermbg=NONE
 hi lineComments 	ctermfg=lightgreen 	ctermbg=NONE
+hi assignments		ctermfg=white		ctermbg=NONE
 
 hi def link preProcess 			PreProc
 hi def link basicLanguageKeywords 	Statement
 " hi def link basicComments 		Comment
 hi def link constString 		Constant
+
 hi def link ctypeFunctions		Function
 hi def link dispFunctions		Function
 hi def link FAT16Functions		Function
@@ -71,8 +74,7 @@ hi def link touchScreenFunctions	Function
 hi def link widgetsFunctions		Function
 hi def link CRCFunctions		Function
 
-
-hi def link test 			Test
+hi def link main 			Main
 
 let b:current_syntax = "4Dg"
 
