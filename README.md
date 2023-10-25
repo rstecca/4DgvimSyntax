@@ -3,8 +3,8 @@
 This syntax highlighter currently offers only the bare minimum. It needs more work, collaborators welcome.
 
 ## Install
-Put the 4Dg.vim file in ~/.vim/syntax/  
-Create the syntax folder if it doesn't exist.
+Put the 4Dg.vim file in *~/.vim/syntax/*  
+Create the *syntax* folder if it doesn't exist.
 
 # Use
 
